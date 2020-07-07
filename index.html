@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Books</title>
+        <link rel="stylesheet" type="text/css" href="public/style.css">
+        </head>
+<body>
+<div class="container">
+
+<h1>Books</h1>
+
+
+<table class="center"><tr>
+<td id="getOne">
+<input class="sml" type='tel' pattern="[0-9\-]+" id ="searchforbook" placeholder="Enter ISBN">
+<br>
+<button class="sml" type="button" onclick="loadSingle()">Search for a book</button>
+</td></tr>
+<tr>
+    <td id="deleteOne">
+      <input class="sml" type='tel' pattern="[0-9\-]+" id ="deletebook" placeholder="Enter ISBN">
+      <br>
+       <button class="sml" type="button" onclick="deleteBook()">Delete a book</button>        
+    </td>
+</tr>
+</table>
+
+<form method="POST" id="bookform">
+  <table class="tblbig" id="addbook">
+          <tr>
+          <th>Add Book</th>
+          <th>Enter Information</th>
+
+      </tr>
+      <tr>
+          <td><label for="isbn">ISBN</label></td>
+          <td><input type='tel' pattern="[0-9\-]+"
+                     id="isbn"
+                     name="isbn"></td>
+      </tr>
+      <tr>
+          <td><label for="title">Title</label></td>
+          <td><input type="text"
+                     name="title"
+                     id="title"
+                     ></td>
+      </tr>
+      <tr>
+          <td><label for="pages">Pages</label></td>
+          <td><input type="number"
+                     name="pages"
+                     id="pages"></td>
+      </tr>
+      <tr>
+          <td><label for="year">Year</label></td>
+          <td><input type="number"
+                     name="year"
+                     id="year"></td>
+      </tr>
+      <tr>
+        <td><label for="author">Author</label></td>
+        <td><input type="text"
+                   name="author"
+                   id="author"></td>
+    </tr>
+      <tr>
+          <td colspan="2" style=text-align:center;>
+              <input type="submit" value="Add Book">
+          </td>
+      </tr>
+  </table>
+</form>
+
+  <form method="PUT" id="bookformupdate">
+  <table class="tblbig" id="updatebook">
+          <tr>
+          <th>Update Book</th>
+          <th>Enter Information</th>
+
+      </tr>
+      <tr>
+          <td><label for="uisbn">Existing ISBN</label></td>
+          <td><input type='tel' pattern="[0-9\-]+"
+                     name="uisbn"></td>
+      </tr>
+      <tr>
+          <td><label for="utitle">Updated Title</label></td>
+          <td><input type="text"
+                     name="utitle"
+                     id="utitle"></td>
+      </tr>
+      <tr>
+          <td><label for="upages">Updated Pages</label></td>
+          <td><input type="number"
+                     name="upages"
+                     id="upages"></td>
+      </tr>
+      <tr>
+          <td><label for="uyear">Updated Year</label></td>
+          <td><input type="number"
+                     name="uyear"
+                     id="uyear"></td>
+      </tr>
+      <tr>
+        <td><label for="uauthor">Updated Author</label></td>
+        <td><input type="text"
+                   name="uauthor"
+                   id="uauthor"></td>
+    </tr>
+      <tr>
+          <td colspan="2" style=text-align:center;>
+              <input type="submit" value="Update Book">
+          </td>
+      </tr>
+  </table>
+</form>
+
+<table id="myTable">
+    <tr><th colspan="5" id="bookbutton">
+    <button class="load" type="button" onclick="loadDoc()">Load Books</button>
+   </th></tr>
+   <tr>
+      <th>ISBN</th>
+      <th>Title</th>
+      <th>Pages</th>
+      <th>Year</th>
+      <th>Author</th>
+    </tr>
+</table>
+</div>
+<script src="public/main.js"></script>
+</body>
+</html>

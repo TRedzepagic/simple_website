@@ -1,0 +1,66 @@
+h1 {
+    text-align: center;
+    color:wheat;
+    align-items: center;
+    justify-content: center;}
+
+#bookbutton{
+        text-align: center;
+        align-items: center;
+        justify-content: center;}
+    
+#myTable{
+        width: 90%;
+        text-align: center;
+        padding:5px;
+        margin: 5px;
+    }
+    
+.container {
+    overflow: hidden;
+    padding: 5px;
+    width: 100%;
+    margin: 5px;
+}
+
+input {
+    width: 100%; 
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+}
+
+.load{
+    width:100%
+}
+
+
+.center {
+    padding: 2px;
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+.sml{
+    width:95%;
+    margin:5px;
+}
+
+.tblbig{
+    width: 45%;
+    padding: 2px;
+    float: left;
+    margin: 5px;
+    margin-right: 0px;
+}
+table, th, td {
+    color:wheat;
+    border: 1px solid black;
+    border-color: white;
+}
+
+body{
+    background-image: url(../img/bg.png);
+    background-repeat: repeat;
+}
+
