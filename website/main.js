@@ -14,18 +14,24 @@ xhr.send();
 
 function loadSingle() {
     var str = document.getElementById("searchforbook").value;
-    var table = document.getElementById("myTable");
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var response = JSON.parse(xhr.responseText);
-            console.log(response);
-            fillTable(table, response);
+    if(str.length==0)
+    {
+        alert("Please input an ISBN!");
+    }else{
+        var table = document.getElementById("myTable");
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                console.log(response);
+                fillTable(table, response);
+          }
+        };
+        xhr.open("GET", "http://localhost:8080/getbook/"+str, true);
+        xhr.send();
       }
-    };
-    xhr.open("GET", "http://localhost:8080/getbook/"+str, true);
-    xhr.send();
-  }
+    }
+
 
 
 
@@ -39,6 +45,10 @@ bookForm.onsubmit = function (evt) {
     var year =document.getElementById("year").value;
     var author = document.getElementById("author").value;
   
+    if(isbn.length==0 || title.length==0 || pages.length==0 || year.length==0 || author.length==0)
+    {
+        alert("One or more fields are empty!");
+    }else{
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "http://localhost:8080/addbook");
     xhr.send(JSON.stringify({
@@ -51,10 +61,11 @@ bookForm.onsubmit = function (evt) {
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             loadDoc();
+            alert("Request successful");
       }
     };
- 
 };
+ };
 
 var bookFormUpdate = document.getElementById("bookformupdate");
 bookFormUpdate.onsubmit = function (evt) {
@@ -66,35 +77,47 @@ bookFormUpdate.onsubmit = function (evt) {
     var year =document.getElementById("uyear").value;
     var author = document.getElementById("uauthor").value;
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("PUT", "http://localhost:8080/updatebook/"+isbn);
-    xhr.send(JSON.stringify({
-        isbn: isbn,
-        title: title,
-        pages: pages,
-        year: year,
-        author: author
-    }));
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            loadDoc();
-      }
-    };
+    if(isbn.length==0 || title.length==0 || pages.length==0 || year.length==0 || author.length==0)
+    {
+        alert("One or more fields are empty!");
+    }else{
+        var xhr = new XMLHttpRequest();
+        xhr.open("PUT", "http://localhost:8080/updatebook/"+isbn);
+        xhr.send(JSON.stringify({
+            isbn: isbn,
+            title: title,
+            pages: pages,
+            year: year,
+            author: author
+        }));
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                loadDoc();
+                alert("Request successful");
+              }
+        };
+    }
  };
 
 
 
 function deleteBook() {
     var str = document.getElementById("deletebook").value;
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            loadDoc();
+    if (str.length==0){
+        alert("Please enter an ISBN");
+    }else{
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                loadDoc();
+                alert("Request successful");
+          }
+        };
+        xhr.open("DELETE", "http://localhost:8080/deletebook/"+str, true);
+        xhr.send();
       }
-    };
-    xhr.open("DELETE", "http://localhost:8080/deletebook/"+str, true);
-    xhr.send();
-  }
+    
+    }
 
 
 function fillTable(table, response){
