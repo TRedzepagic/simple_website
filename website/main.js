@@ -104,7 +104,7 @@ bookFormUpdate.onsubmit = function (evt) {
 function deleteBook() {
     var str = document.getElementById("deletebook").value;
     if (str.length==0){
-        alert("Please enter an ISBN");
+        alert("Please input an ISBN!");
     }else{
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
