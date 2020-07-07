@@ -5,7 +5,7 @@
         <title>Books</title>
         <link rel="stylesheet" type="text/css" href="public/style.css">
         </head>
-<body>
+<body onload="loadDoc()">
 <div class="container">
 
 <h1>Books</h1>
@@ -82,7 +82,8 @@
       <tr>
           <td><label for="uisbn">Existing ISBN</label></td>
           <td><input type='tel' pattern="[0-9\-]+"
-                     name="uisbn"></td>
+                     name="uisbn"
+                     id="uisbn"></td>
       </tr>
       <tr>
           <td><label for="utitle">Updated Title</label></td>

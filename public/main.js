@@ -48,7 +48,12 @@ bookForm.onsubmit = function (evt) {
         year: year,
         author: author
     }));
-    
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            loadDoc();
+      }
+    };
+ 
 };
 
 var bookFormUpdate = document.getElementById("bookformupdate");
@@ -70,6 +75,11 @@ bookFormUpdate.onsubmit = function (evt) {
         year: year,
         author: author
     }));
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            loadDoc();
+      }
+    };
  };
 
 
@@ -79,6 +89,7 @@ function deleteBook() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            loadDoc();
       }
     };
     xhr.open("DELETE", "http://localhost:8080/deletebook/"+str, true);
