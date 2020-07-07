@@ -7,7 +7,7 @@ A simple website containing a database, front-end and back-end.
 - Display messages upon successful entries etc.
 
 ## Features
-![Looks :)](looks.png)
+![Looks :)](/assets/looks.png)
 
 This is a simple website for bookkeeping. Excuse my styling skills.
 You can:
