@@ -2,10 +2,8 @@
 A simple website containing a database, front-end and back-end.
 
 ## To-Do
-- Style website to something presentable
-- Display error messages on blank entries etc.
-- Display messages upon successful entries etc.
-
+- Possible further styling
+  
 ## Features
 ![Looks :)](/assets/looks.png)
 
