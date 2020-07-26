@@ -26,6 +26,9 @@ function loadSingle() {
                 console.log(response);
                 fillTable(table, response);
           }
+          if (this.readyState==4 && this.status == 404){
+              alert ("Book doesn't exist");
+          }
         };
         xhr.open("GET", "http://localhost:8080/getbook/"+str, true);
         xhr.send();
@@ -63,6 +66,10 @@ bookForm.onsubmit = function (evt) {
             loadDoc();
             alert("Request successful");
       }
+      if (this.readyState==4 && this.status == 500){
+          loadDoc();
+          alert("Something went wrong. Check if you're trying to add a duplicate entry")
+      }
     };
 };
  };
@@ -95,6 +102,9 @@ bookFormUpdate.onsubmit = function (evt) {
                 loadDoc();
                 alert("Request successful");
               }
+              if (this.readyState==4 && this.status ==404){
+                  alert("Book doesn't exist")
+              }
         };
     }
  };
@@ -112,6 +122,9 @@ function deleteBook() {
                 loadDoc();
                 alert("Request successful");
           }
+          if(this.readyState==4 && this.status==404){
+              alert("Book doesn't exist")
+          }
         };
         xhr.open("DELETE", "http://localhost:8080/deletebook/"+str, true);
         xhr.send();
@@ -127,6 +140,9 @@ function fillTable(table, response){
     }
     for(var i = 0;i < response.length;i++){
         
+        const tr = document.createElement("tr")
+        const name = document.createElement("td")
+        name.textContent
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
