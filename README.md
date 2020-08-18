@@ -1,13 +1,13 @@
 # simple_website
-A simple website containing a database, front-end and back-end.
+A simple website with a database, as well as front-end and back-end components.
 
 ## To-Do
-- Possible further styling
+- Implement login system (Deleting only available to logged in admin user)
   
 ## Features
 ![Looks :)](/assets/looks.png)
 
-This is a simple website for bookkeeping. Excuse my styling skills.
+This is a simple library-esque website. Excuse my styling skills.
 You can:
 - Add new books
 - Update existing books

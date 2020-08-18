@@ -143,10 +143,15 @@ function loadDoc() {
       const tableRow = document.createElement("tr");
 
       const tableISBN = document.createElement("td");
+      tableISBN.style.textAlign='center';
       const tableTitle = document.createElement("td");
+      tableTitle.style.textAlign='center';
       const tablePages = document.createElement("td");
+      tablePages.style.textAlign='center';
       const tableYear = document.createElement("td");
+      tableYear.style.textAlign='center';
       const tableAuthor = document.createElement("td");
+      tableAuthor.style.textAlign='center';
 
       tableISBN.textContent = el.isbn;
       tableTitle.textContent =el.title;
