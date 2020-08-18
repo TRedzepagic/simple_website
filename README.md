@@ -5,9 +5,9 @@ A simple website with a database, as well as front-end and back-end components.
 - Implement login system (Deleting only available to logged in admin user)
   
 ## Features
-![Looks :)](/assets/looks.png)
+![Looks](/assets/looks.png)
 
-This is a simple library-esque website. Excuse my styling skills.
+This is a simple library-esque website.
 You can:
 - Add new books
 - Update existing books
